@@ -1,0 +1,58 @@
+version: "3.9"
+
+networks:
+  ansible-net:
+
+services:
+
+  # Linux Nodes
+  linux1:
+    build: ./linux
+    container_name: linux1
+    hostname: linux1
+    networks:
+      - ansible-net
+    ports:
+      - "2221:22"
+
+  linux2:
+    build: ./linux
+    container_name: linux2
+    hostname: linux2
+    networks:
+      - ansible-net
+    ports:
+      - "2222:22"
+
+  linux3:
+    build: ./linux
+    container_name: linux3
+    hostname: linux3
+    networks:
+      - ansible-net
+    ports:
+      - "2223:22"
+
+  linux4:
+    build: ./linux
+    container_name: linux4
+    hostname: linux4
+    networks:
+      - ansible-net
+    ports:
+      - "2224:22"
+
+  # Windows Nodes
+  # windows1:
+  #   build: ./windows
+  #   container_name: windows1
+  #   hostname: windows1
+  #   networks:
+  #     - ansible-net
+
+  # windows2:
+  #   build: ./windows
+  #   container_name: windows2
+  #   hostname: windows2
+  #   networks:
+  #     - ansible-net
