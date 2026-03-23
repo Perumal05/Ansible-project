@@ -265,7 +265,6 @@ This project demonstrates a **real-world Ansible setup** with:
 * Scalable configuration management
 * Modular automation design
 
-👉 Suitable for **DevOps / SRE portfolio projects**
 
 ---
 
