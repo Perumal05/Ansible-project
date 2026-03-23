@@ -79,19 +79,25 @@ ansible linux -i inventory/hosts.ini -m ping
 For Dynamic inventory: (auto fetching the details of linux server based on the docker details using python)
 
 1️⃣ Install venv (if not installed)
+
 sudo apt install python3-venv -y
+
 2️⃣ Create Virtual Environment
 
 From your project root:
 
 python3 -m venv venv
+
 3️⃣ Activate It
+
 source venv/bin/activate
 
 Now your terminal will show:
 
 (venv) kiwi@Perumal:...
+
 4️⃣ Install Docker SDK
+
 pip install docker
 
 Run the python script:
@@ -109,3 +115,14 @@ ansible -i inventory/docker_inventory.py linux -m ping
 You will the see the result like this
 
 ![alt text](assets/python-inventory-result.png)
+
+
+To execute roles:
+
+Export the anisble config location as env using the below command(note: ansible.cfg file is to say playbook to find the location of roles) 
+
+export ANSIBLE_CONFIG=/mnt/c/Perumal/Ansible/Ansible-project/ansible.cfg
+
+Then run the playbook:
+
+ansible-playbook -i inventory/docker_inventory.py playbooks/site.yaml

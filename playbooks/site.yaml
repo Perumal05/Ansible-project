@@ -1,0 +1,7 @@
+- name: Configure Linux Containers
+  hosts: linux
+  become: yes
+
+  roles:
+    - common
+    - nginx
